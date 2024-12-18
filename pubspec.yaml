@@ -38,6 +38,8 @@ dependencies:
   equatable: ^2.0.7
   dio: ^5.7.0
   dartz: ^0.10.1
+  flutter_bloc: ^8.1.6
+  get_it: ^8.0.3
 
 dev_dependencies:
   flutter_test:
