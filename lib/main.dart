@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) =>
-              MoviesBloc(sl())..add(GetNowPlayingMoviesEvent()),
+              MoviesBloc(sl(), sl(), sl())..add(GetNowPlayingMoviesEvent()),
         ),
       ],
       child: const MaterialApp(
