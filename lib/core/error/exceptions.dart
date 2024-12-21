@@ -1,4 +1,4 @@
-import 'package:movie_app/core/erorr/erorrmodel.dart';
+import 'package:movie_app/core/error/erorrmodel.dart';
 
 class ServerException implements Exception {
   final ErorrModel erorrModel;

@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:movie_app/core/constants/api_constants.dart';
-import 'package:movie_app/core/erorr/erorrmodel.dart';
-import 'package:movie_app/core/erorr/exceptions.dart';
+import 'package:movie_app/core/error/erorrmodel.dart';
+import 'package:movie_app/core/error/exceptions.dart';
 import 'package:movie_app/movies/data/model/movie_model.dart';
 
 abstract class BaseMoviesRemoteDataSource {
