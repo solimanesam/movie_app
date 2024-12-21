@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/core/dependency_injection/movies_dependency_injection.dart';
 import 'package:movie_app/movies/presentation/controller/bloc/movies_bloc.dart';
-import 'package:movie_app/movies/presentation/pages/view/movie_screen.dart';
+import 'package:movie_app/movies/presentation/view/pages/movie_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

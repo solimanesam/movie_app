@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:movie_app/movies/presentation/pages/components/popular_component.dart';
-import 'package:movie_app/movies/presentation/pages/components/top_rated_component.dart';
+import 'package:movie_app/movies/presentation/view/components/popular_component.dart';
+import 'package:movie_app/movies/presentation/view/components/top_rated_component.dart';
 
 import '../../../../core/utils/app_string.dart';
 import '../components/now_playing_component.dart';
