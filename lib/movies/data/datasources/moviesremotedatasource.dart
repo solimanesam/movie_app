@@ -14,22 +14,22 @@ class MoviesRemoteDataSource extends BaseMoviesRemoteDataSource {
   @override
   Future<List<MovieModel>> getNowPlaying() async {
     final Response response = await Dio().get(urlnowplaying);
-    return getMoviesFunction(response);
+    return getMoviesOrErrorFunction(response);
   }
 
   @override
   Future<List<MovieModel>> getPopularMovies() async {
     final Response response = await Dio().get(urlpopular);
-    return getMoviesFunction(response);
+    return getMoviesOrErrorFunction(response);
   }
 
   @override
   Future<List<MovieModel>> getTopRatedMovies() async {
     final Response response = await Dio().get(urltoprated);
-    return getMoviesFunction(response);
+    return getMoviesOrErrorFunction(response);
   }
 
-  Future<List<MovieModel>> getMoviesFunction(Response response) async {
+  Future<List<MovieModel>> getMoviesOrErrorFunction(Response response) async {
     if (response.statusCode == 200) {
       return List<MovieModel>.from((response.data['results'] as List).map(
         (jsonMovieModel) => MovieModel.fromjson(jsonMovieModel),

@@ -3,6 +3,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:movie_app/core/constants/view_constance.dart';
 
 import '../../../../core/constants/api_constants.dart';
 import '../../../../core/utils/enums.dart';
@@ -27,7 +28,7 @@ class NowPlayingComponent extends StatelessWidget {
               );
             case RequestStateEnum.loaded:
               return FadeIn(
-                duration: const Duration(milliseconds: 500),
+                duration:ViewConstance.fadeInDuration,
                 child: CarouselSlider(
                   options: CarouselOptions(
                     height: 400.0,
