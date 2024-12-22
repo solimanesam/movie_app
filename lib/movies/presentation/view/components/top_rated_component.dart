@@ -3,6 +3,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/core/constants/view_constance.dart';
+import 'package:movie_app/core/utils/loading_widget.dart';
 
 import 'package:shimmer/shimmer.dart';
 
@@ -21,19 +22,13 @@ class TopRatedComponent extends StatelessWidget {
         builder: (context, state) {
           switch (state.topRatedMoviesState) {
             case RequestStateEnum.loading:
-              return const SizedBox(
-                height: 170.0,
-                child: Center(
-                  child: CircularProgressIndicator(),
-                ),
-              );
+              return getLoadingWidget;
             case RequestStateEnum.loaded:
               return FadeIn(
                 duration: ViewConstance.fadeInDuration,
                 child: SizedBox(
                   height: 170.0,
                   child: ListView.builder(
-                    shrinkWrap: true,
                     scrollDirection: Axis.horizontal,
                     padding: const EdgeInsets.symmetric(horizontal: 16.0),
                     itemCount: state.topRatedMovies.length,
@@ -47,8 +42,7 @@ class TopRatedComponent extends StatelessWidget {
                           child: CachedNetworkImage(
                             width: 120.0,
                             fit: BoxFit.cover,
-                            imageUrl:
-                                imageUrl(movie.backdroppath),
+                            imageUrl: imageUrl(movie.backdroppath),
                             placeholder: (context, url) => Shimmer.fromColors(
                               baseColor: Colors.grey[850]!,
                               highlightColor: Colors.grey[800]!,
