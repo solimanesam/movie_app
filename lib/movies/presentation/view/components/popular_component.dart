@@ -3,6 +3,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/core/constants/view_constance.dart';
+import 'package:movie_app/core/utils/loading_widget.dart';
 import '../../../../core/constants/api_constants.dart';
 import '../../../../core/utils/enums.dart';
 
@@ -21,19 +22,13 @@ class PopularComponent extends StatelessWidget {
       builder: (context, state) {
         switch (state.popularMoviesState) {
           case RequestStateEnum.loading:
-            return const SizedBox(
-              height: 170.0,
-              child: Center(
-                child: CircularProgressIndicator(),
-              ),
-            );
+            return getLoadingWidget;
           case RequestStateEnum.loaded:
             return FadeIn(
               duration: ViewConstance.fadeInDuration,
               child: SizedBox(
                 height: 170.0,
                 child: ListView.builder(
-                  shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
                   itemCount: state.popularMovies.length,

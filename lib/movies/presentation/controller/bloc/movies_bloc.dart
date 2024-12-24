@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:movie_app/core/utils/base_use_case.dart';
 import 'package:movie_app/core/utils/enums.dart';
 import 'package:movie_app/movies/domain/entity/movie.dart';
 import 'package:movie_app/movies/domain/usecases/get_now_playing_usecase.dart';
@@ -23,7 +24,7 @@ class MoviesBloc extends Bloc<MoviesEvent, MoviesState> {
   }
 
   Future<void> getNowPlayingMovies(GetNowPlayingMoviesEvent event, emit) async {
-    final result = await getNowPlayingUsecase.excute();
+    final result = await getNowPlayingUsecase(const NoParameters());
     result.fold(
       (failure) => emit(state.copywith(
           nowPlayingMoviesState: RequestStateEnum.erorr,
@@ -35,7 +36,7 @@ class MoviesBloc extends Bloc<MoviesEvent, MoviesState> {
   }
 
   Future<void> getPopularMovies(GetPopularMoviesEvent event, emit) async {
-    final result = await getPopularMoviesUsecase.excute();
+    final result = await getPopularMoviesUsecase(const NoParameters());
     result.fold(
       (failure) => emit(state.copywith(
           popularMoviesState: RequestStateEnum.erorr,
@@ -47,7 +48,7 @@ class MoviesBloc extends Bloc<MoviesEvent, MoviesState> {
   }
 
   Future<void> getTopRatedMovies(GetTopRatedMoviesEvent event, emit) async {
-    final result = await getTopRatedMoviesUsecase.excute();
+    final result = await getTopRatedMoviesUsecase(const NoParameters());
     result.fold(
       (failure) => emit(state.copywith(
           topRatedMoviesState: RequestStateEnum.erorr,

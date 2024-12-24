@@ -16,7 +16,6 @@ class MoviesScreen extends StatelessWidget {
       body: SingleChildScrollView(
         key: const Key('movieScrollView'),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const NowPlayingComponent(),
             Container(
@@ -34,9 +33,9 @@ class MoviesScreen extends StatelessWidget {
                     ),
                   ),
                   const Padding(
-                    padding:  EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(8.0),
                     child: Row(
-                      children:  [
+                      children: const [
                         Text(
                           AppString.seeMore,
                           style: TextStyle(
@@ -77,8 +76,8 @@ class MoviesScreen extends StatelessWidget {
                   const Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Row(
-                      children: [
-                        const Text(
+                      children: const [
+                        Text(
                           AppString.seeMore,
                           style: TextStyle(
                             color: Colors.white,

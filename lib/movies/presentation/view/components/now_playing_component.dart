@@ -4,6 +4,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/core/constants/view_constance.dart';
+import 'package:movie_app/core/utils/loading_widget.dart';
 
 import '../../../../core/constants/api_constants.dart';
 import '../../../../core/utils/enums.dart';
@@ -20,15 +21,10 @@ class NowPlayingComponent extends StatelessWidget {
         builder: (context, state) {
           switch (state.nowPlayingMoviesState) {
             case RequestStateEnum.loading:
-              return const SizedBox(
-                height: 400.0,
-                child: Center(
-                  child: CircularProgressIndicator(),
-                ),
-              );
+              return getLoadingWidget;
             case RequestStateEnum.loaded:
               return FadeIn(
-                duration:ViewConstance.fadeInDuration,
+                duration: ViewConstance.fadeInDuration,
                 child: CarouselSlider(
                   options: CarouselOptions(
                     height: 400.0,
