@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:movie_app/core/constants/api_constants.dart';
 import 'package:movie_app/core/error/erorrmodel.dart';
 import 'package:movie_app/core/error/exceptions.dart';
-import 'package:movie_app/movies/data/model/movie_model.dart';
+import 'package:movie_app/movies/data/models/movie_model.dart';
 
 abstract class BaseMoviesRemoteDataSource {
   Future<List<MovieModel>> getNowPlaying();

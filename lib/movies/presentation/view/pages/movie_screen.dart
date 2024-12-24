@@ -34,9 +34,9 @@ class MoviesScreen extends StatelessWidget {
                     ),
                   ),
                   const Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding:  EdgeInsets.all(8.0),
                     child: Row(
-                      children: const [
+                      children:  [
                         Text(
                           AppString.seeMore,
                           style: TextStyle(
@@ -75,16 +75,16 @@ class MoviesScreen extends StatelessWidget {
                     ),
                   ),
                   const Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: EdgeInsets.all(8.0),
                     child: Row(
-                      children: const [
-                        Text(
+                      children: [
+                        const Text(
                           AppString.seeMore,
                           style: TextStyle(
                             color: Colors.white,
                           ),
                         ),
-                        Icon(
+                        const Icon(
                           Icons.arrow_forward_ios,
                           size: 16.0,
                           color: Colors.white,
