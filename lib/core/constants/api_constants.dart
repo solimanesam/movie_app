@@ -7,3 +7,5 @@ const String urltoprated = '$baseUrl/movie/top_rated?api_key=$apiKey';
 String imageUrl(String path) => '$baseImageUrl$path';
 String movieDetailsPath(int movieId) =>
     "$baseUrl/movie/$movieId?api_key=$apiKey";
+String recommendationPath(int movieId) =>
+    "$baseUrl/movie/$movieId/recommendations?api_key=$apiKey";
