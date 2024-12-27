@@ -17,13 +17,18 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) =>
-              MoviesBloc(sl(), sl(), sl())..add(GetNowPlayingMoviesEvent())..add(GetPopularMoviesEvent())..add(GetTopRatedMoviesEvent()),
+          create: (context) => MoviesBloc(sl(), sl(), sl())
+            ..add(GetNowPlayingMoviesEvent())
+            ..add(GetPopularMoviesEvent())
+            ..add(GetTopRatedMoviesEvent()),
         ),
       ],
-      child: const MaterialApp(
+      child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: MoviesScreen(),
+        theme: ThemeData(
+          scaffoldBackgroundColor: Colors.black,
+        ),
+        home: const MoviesScreen(),
       ),
     );
   }
