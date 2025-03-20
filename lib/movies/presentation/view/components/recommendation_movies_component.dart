@@ -17,9 +17,9 @@ class RecommendationMoviesComponent extends StatelessWidget {
         builder: (context, state) {
       switch (state.recommendationsStateEnum) {
         case RequestStateEnum.loading:
-          return getLoadingWidget;
+          return SliverToBoxAdapter(child: getLoadingWidget);
         case RequestStateEnum.loaded:
-          return GridView.builder(
+          return SliverGrid.builder(
           itemBuilder :
               (context, index) {
                 final recommendation = state.recommendation[index];
@@ -60,10 +60,12 @@ class RecommendationMoviesComponent extends StatelessWidget {
             ),
           );
         case RequestStateEnum.erorr:
-          return SizedBox(
-            height: 400.0,
-            child: Center(
-              child: Text(state.movieDetailMessage),
+          return SliverToBoxAdapter(
+            child: SizedBox(
+              height: 400.0,
+              child: Center(
+                child: Text(state.movieDetailMessage),
+              ),
             ),
           );
       }
